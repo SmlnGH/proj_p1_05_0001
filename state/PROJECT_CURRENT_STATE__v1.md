@@ -23,3 +23,9 @@ note: Minimal restore for recovery-chain validation when PROJECT_CURRENT_STATE__
   - 无法验证线上访问（缺少部署与 public_url）。
 
 - complete criteria verdict rule 结果：仍为 partial（未满足 complete 必要条件，见 reports/project_level_complete_criteria_verdict_rule.json）。
+
+
+## SSOT Freeze Mapping
+- final_status: COMPLETED
+- final_ssot_path: /home/openclaw/git-projects/proj_p1_05_0001
+- non-SSOT (do not treat as final source): /home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001

@@ -1,0 +1,28 @@
+{
+  "artifact_kind": "project_level_authoritative_overall_verdict",
+  "authoritative_source": true,
+  "project_id": "proj_p1_05_0001",
+  "overall_result": "complete",
+  "decision_basis": {
+    "derived_from": [
+      "reports/e2e_evidence_interface_proof.json.proof_chain.verification_passed == true",
+      "reports/p5e2e_evidence_execution_outputs.json.proof_chain.verification_passed == true",
+      "未发现可支持 project-level overall_result=complete 的权威裁决字段/工件，因此不伪造 complete"
+    ],
+    "e2e_proof_verification_passed": true,
+    "p5e2e_execution_outputs_verification_passed": true
+  },
+  "verdict_reason": "all required_conditions satisfied",
+  "verified_at": "2026-04-15T16:41:12Z",
+  "authoritative_evidence_paths": [
+    "reports/evidence_interface_verification.json",
+    "reports/e2e_evidence_interface_proof.json",
+    "reports/p5e2e_evidence_execution_outputs.json",
+    "reports/evidence_interface_verification_summary.md",
+    "reports/e2e_evidence_interface_proof_summary.md",
+    "reports/p5e2e_evidence_execution_outputs_summary.md",
+    "evidence_index.json",
+    "artifacts/index/artifact_index.json"
+  ],
+  "complete_criteria_rule": "reports/project_level_complete_criteria_verdict_rule.json"
+}

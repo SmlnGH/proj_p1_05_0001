@@ -220,7 +220,7 @@
             </div>
             <div class="kv">
               <div class="key">public_url</div>
-              <div class="val"><span id="dyn_public_url">../current_state.json</span></div>
+              <div class="val"><span id="dyn_public_url">./current_state.json</span></div>
             </div>
             <div class="kv">
               <div class="key">GitHub repo</div>
@@ -238,14 +238,14 @@
             <summary>State / Evidence / Acceptance 汇总</summary>
             <p>直接跳转到仓库中的关键产物文件（支持 GitHub/Pages 直读）。</p>
             <ul class="list">
-              <li><a class="link" href="../current_state.md">current_state.md</a></li>
-              <li><a class="link" href="../current_state.json">current_state.json</a></li>
-              <li><a class="link" href="../acceptance.json">acceptance.json</a></li>
-              <li><a class="link" href="../evidence_index.json">evidence_index.json</a></li>
-              <li><a class="link" href="../state/PROJECT_CURRENT_STATE__v1.md">state/PROJECT_CURRENT_STATE__v1.md</a></li>
-              <li><a class="link" href="../reports/evidence_interface_verification_summary.md">reports/evidence_interface_verification_summary.md</a></li>
-              <li><a class="link" href="../reports/e2e_evidence_interface_proof_summary.md">reports/e2e_evidence_interface_proof_summary.md</a></li>
-              <li><a class="link" href="../reports/p5e2e_evidence_execution_outputs_summary.md">reports/p5e2e_evidence_execution_outputs_summary.md</a></li>
+              <li><a class="link" href="./current_state.md">current_state.md</a></li>
+              <li><a class="link" href="./current_state.json">current_state.json</a></li>
+              <li><a class="link" href="./acceptance.json">acceptance.json</a></li>
+              <li><a class="link" href="./evidence_index.json">evidence_index.json</a></li>
+              <li><a class="link" href="./state/PROJECT_CURRENT_STATE__v1.md">state/PROJECT_CURRENT_STATE__v1.md</a></li>
+              <li><a class="link" href="./reports/evidence_interface_verification_summary.md">reports/evidence_interface_verification_summary.md</a></li>
+              <li><a class="link" href="./reports/e2e_evidence_interface_proof_summary.md">reports/e2e_evidence_interface_proof_summary.md</a></li>
+              <li><a class="link" href="./reports/p5e2e_evidence_execution_outputs_summary.md">reports/p5e2e_evidence_execution_outputs_summary.md</a></li>
             </ul>
           </details>
 
@@ -256,10 +256,10 @@
             <summary>证据摘要（来自 *summary.md / verification/proof outputs）</summary>
             <p>以下卡片用于快速审计。页面仅做展示，不改变证据。</p>
             <div class="kvs" style="margin-top:10px;">
-              <div class="kv"><div class="key">evidence_interface_verification_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/evidence_interface_verification_summary.md">reports/…</a></div></div>
-              <div class="kv"><div class="key">e2e_evidence_interface_proof_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/e2e_evidence_interface_proof_summary.md">reports/…</a></div></div>
-              <div class="kv"><div class="key">p5e2e_execution_outputs_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/p5e2e_evidence_execution_outputs_summary.md">reports/…</a></div></div>
-              <div class="kv"><div class="key">project verdict</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/project_level_acceptance_overall_verdict.json">reports/…</a></div></div>
+              <div class="kv"><div class="key">evidence_interface_verification_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="./reports/evidence_interface_verification_summary.md">reports/…</a></div></div>
+              <div class="kv"><div class="key">e2e_evidence_interface_proof_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="./reports/e2e_evidence_interface_proof_summary.md">reports/…</a></div></div>
+              <div class="kv"><div class="key">p5e2e_execution_outputs_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="./reports/p5e2e_evidence_execution_outputs_summary.md">reports/…</a></div></div>
+              <div class="kv"><div class="key">project verdict</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="./reports/project_level_acceptance_overall_verdict.json">reports/…</a></div></div>
             </div>
           </details>
 
@@ -290,15 +290,15 @@
           <div class="kvs">
             <div class="kv">
               <div class="key">Evidence index</div>
-              <div class="val"><a class="link" href="../evidence_index.json">Open</a></div>
+              <div class="val"><a class="link" href="./evidence_index.json">Open</a></div>
             </div>
             <div class="kv">
               <div class="key">Artifacts index</div>
-              <div class="val"><a class="link" href="../artifacts/index/artifact_index.json">Open</a></div>
+              <div class="val"><a class="link" href="./artifacts/index/artifact_index.json">Open</a></div>
             </div>
             <div class="kv">
               <div class="key">Project verdict</div>
-              <div class="val"><a class="link" href="../reports/project_level_acceptance_overall_verdict.json">Open</a></div>
+              <div class="val"><a class="link" href="./reports/project_level_acceptance_overall_verdict.json">Open</a></div>
             </div>
             <div class="kv">
               <div class="key">Branch</div>
@@ -330,8 +330,8 @@
       }
       (async()=>{
         try{
-          const cs = await loadJSON('../current_state.json');
-          const acc = await loadJSON('../acceptance.json');
+          const cs = await loadJSON('./current_state.json');
+          const acc = await loadJSON('./acceptance.json');
           setText('dyn_execution_status', cs.execution_status);
           setText('dyn_deployment_status', cs.deployment_status);
           setText('dyn_public_url', cs.public_url);

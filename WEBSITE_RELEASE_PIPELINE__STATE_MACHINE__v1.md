@@ -46,3 +46,6 @@
 ## 与 acceptance / execution 的状态机约束
 - 当 acceptance.overall_result != complete：execution_status 必须保持阻塞/未完成态。
 - 禁止把 evidence 或 proof 的 partial 成功直接当成 project-level complete。
+\n---\n
+System-level canonical path: /home/openclaw/.openclaw/workspace/ai-plus/governance/ssot/docs/WEBSITE_RELEASE_PIPELINE__STATE_MACHINE__v1.md
+Role of this file: sample-trace (not system SSOT host).

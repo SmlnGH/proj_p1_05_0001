@@ -80,3 +80,6 @@
 - **Stage 4 → Stage 5**：facts sync 写回 state
 - **Stage 5 → Stage 6**：verdict engine 输出 overall_result=complete/partial
 - **Stage 6 → Stage 7**：ssot freeze 生成 final closeout
+\n---\n
+System-level canonical path: /home/openclaw/.openclaw/workspace/ai-plus/governance/ssot/docs/WEBSITE_RELEASE_PIPELINE__MODULES_AND_INTERFACES__v1.md
+Role of this file: sample-trace (not system SSOT host).

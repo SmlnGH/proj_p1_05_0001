@@ -23,3 +23,6 @@
 ## 回滚边界
 - 禁止改变 verdict 输出的证据来源
 - 禁止跳过 facts sync
+\n---\n
+System-level canonical path: /home/openclaw/.openclaw/workspace/ai-plus/governance/ssot/docs/WEBSITE_RELEASE_PIPELINE__IMPLEMENTATION_PLAN__v1.md
+Role of this file: sample-trace (not system SSOT host).

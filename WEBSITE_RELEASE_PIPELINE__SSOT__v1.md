@@ -79,3 +79,6 @@
 - Deployment 失败：回滚到上一次可用 public_url（如适配器支持）或保持 partial，并记录原因。
 - Evidence 不足：verdict 只能为 partial/unknown，不得伪造 complete。
 - A/B 双副本：必须执行 SSOT freeze，避免后续漂移。
+\n---\n
+System-level canonical path: /home/openclaw/.openclaw/workspace/ai-plus/governance/ssot/docs/WEBSITE_RELEASE_PIPELINE__SSOT__v1.md
+Role of this file: sample-trace (not system SSOT host).

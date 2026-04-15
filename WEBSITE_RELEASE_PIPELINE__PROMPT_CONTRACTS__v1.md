@@ -40,3 +40,6 @@
 - `final_ssot_path`
 - `non_ssot_replica_actions`：string[]
 - `remaining_blockers`：string[]
+\n---\n
+System-level canonical path: /home/openclaw/.openclaw/workspace/ai-plus/governance/ssot/docs/WEBSITE_RELEASE_PIPELINE__PROMPT_CONTRACTS__v1.md
+Role of this file: sample-trace (not system SSOT host).

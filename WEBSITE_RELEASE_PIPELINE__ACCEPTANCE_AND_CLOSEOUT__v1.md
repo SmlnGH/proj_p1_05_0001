@@ -14,3 +14,6 @@
 ## SSOT freeze 与 closeout 触发条件
 - SSOT freeze：当 verdict_state=computed 且 deploy_state=deployed（有 public_url）时触发。
 - closeout：当 ssot_state=frozen 且最终 remaining blockers 已在文档化中列出。
+\n---\n
+System-level canonical path: /home/openclaw/.openclaw/workspace/ai-plus/governance/ssot/docs/WEBSITE_RELEASE_PIPELINE__ACCEPTANCE_AND_CLOSEOUT__v1.md
+Role of this file: sample-trace (not system SSOT host).

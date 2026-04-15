@@ -1,0 +1,18 @@
+{
+  "module_id": "P4-M-01",
+  "project_id": "proj_p1_05_0001",
+  "generated_at": "2026-03-29T04:02:00Z",
+  "proof_chain": {
+    "artifact_id": "P2M02-ARTIFACT-INDEX-001",
+    "summary_ref": "/home/openclaw/.openclaw/workspace/ai-plus/projects/$proj/reports/evidence_interface_snapshot.json",
+    "pointer": {
+      "target_canonical_path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/artifacts/index/artifact_index.json",
+      "pointer_target_matches_artifact_index_path": true
+    },
+    "artifact_index": {
+      "canonical_path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/artifacts/index/artifact_index.json",
+      "artifact_index_has_artifact": true
+    }
+  },
+  "verification_passed": true
+}

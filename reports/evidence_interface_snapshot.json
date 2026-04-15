@@ -1,0 +1,14 @@
+{
+  "module_id": "P2-M-03",
+  "project_id": "$proj",
+  "generated_at": "2026-03-29T03:35:00Z",
+  "interface_schema": "platform/contracts/evidence_interface.schema.json",
+  "evidence_interface": {
+    "artifact_id": "P2M02-ARTIFACT-INDEX-001",
+    "pointer": {
+      "pointer_type": "evidence_interface_pointer",
+      "target_canonical_path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/$proj/artifacts/index/artifact_index.json"
+    },
+    "summary_ref": "/home/openclaw/.openclaw/workspace/ai-plus/projects/$proj/reports/evidence_interface_snapshot.json"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "trace_id": "trace_p2_01_0001",
+  "module_id": "P2-M-01",
+  "project_id": "proj_p1_05_0001",
+  "schema_version": "schema_v1",
+  "generated_at": "2026-03-29T02:28:00Z",
+  "template_root": "ai-plus/projects/.schema_v1",
+  "manifest": {
+    "required_roots": [
+      "state",
+      "artifacts",
+      "knowledge",
+      "execution_knowledge",
+      "reports",
+      "skillset"
+    ],
+    "expected_schema_version": "schema_v1"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "project_id": "proj_p1_05_0001",
+  "evidence": [
+    {
+      "type": "snapshot",
+      "category": "proof",
+      "path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/evidence_interface_snapshot.json",
+      "generated_at": "unknown",
+      "description": "snapshot: evidence interface snapshot artifact (existing report file)."
+    },
+    {
+      "type": "verification",
+      "category": "verification",
+      "path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/evidence_interface_verification.json",
+      "generated_at": "unknown",
+      "description": "verification: evidence interface verification artifact (existing report file)."
+    },
+    {
+      "type": "proof",
+      "category": "proof",
+      "path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/e2e_evidence_interface_proof.json",
+      "generated_at": "unknown",
+      "description": "proof: e2e evidence interface proof artifact (existing report file)."
+    },
+    {
+      "type": "execution_output",
+      "category": "execution_output",
+      "path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs.json",
+      "generated_at": "unknown",
+      "description": "execution_output: p5e2e evidence execution outputs artifact (existing report file)."
+    },
+    {
+      "type": "execution_output",
+      "category": "execution_output",
+      "path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs_summary.md",
+      "generated_at": "unknown",
+      "description": "execution_output: summary wrapper for p5e2e evidence execution outputs (existing markdown report)."
+    }
+  ],
+  "sources": {
+    "detected_from_reports_dir": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports",
+    "observed_file_paths": [
+      "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/evidence_interface_snapshot.json",
+      "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/evidence_interface_verification.json",
+      "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/e2e_evidence_interface_proof.json",
+      "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs.json",
+      "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs_summary.md"
+    ]
+  }
+}

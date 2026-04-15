@@ -1,0 +1,1 @@
+jq check: jq -e . evidence_interface_snapshot.json should succeed

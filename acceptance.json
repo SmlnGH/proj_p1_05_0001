@@ -1,0 +1,47 @@
+{
+  "project_id": "proj_p1_05_0001",
+  "acceptance_kind": "evidence_based_acceptance",
+  "overall_result": "unknown",
+  "summary": "当前 acceptance 基于 verification/proof/ execution_output 层证据的结构化整理（有 verification_passed/verified_at 等可观测结论），用于支撑证据链层面的治理结论；但本文件不等同于项目级 authoritative overall acceptance 结论（缺少项目级权威 acceptance overall_result 工件，因此 overall_result 维持 unknown）。",
+  "checks": [
+    {
+      "name": "evidence_interface_verification_passed",
+      "result": "partial",
+      "source_type": "verification",
+      "basis": "上游 evidence_interface_verification.json 内部包含 verified_at 与 verification_passed=true，可作为证据链验证通过的依据；但未作为项目级 overall_result 权威来源直接上升。",
+      "evidence_paths": [
+        "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/evidence_interface_verification.json"
+      ]
+    },
+    {
+      "name": "e2e_evidence_interface_proof_chain",
+      "result": "partial",
+      "source_type": "proof",
+      "basis": "上游 e2e_evidence_interface_proof.json 包含 verification_passed=true 与 proof_chain 字段，可作为证据链证明；但未发现项目级 authoritative acceptance overall_result。",
+      "evidence_paths": [
+        "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/e2e_evidence_interface_proof.json"
+      ]
+    },
+    {
+      "name": "p5e2e_execution_outputs_verification_passed",
+      "result": "partial",
+      "source_type": "execution_output",
+      "basis": "上游 p5e2e_evidence_execution_outputs.json 及其摘要包含 verification_passed=true（用于对证执行输出层证据）；但不等同于项目级 authoritative overall acceptance。",
+      "evidence_paths": [
+        "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs.json",
+        "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs_summary.md"
+      ]
+    }
+  ],
+  "unknown_fields": {
+    "acceptance_status": "unknown",
+    "overall_result_reason": "未发现项目级 authoritative acceptance overall_result source；因此 overall_result 保持 unknown。"
+  },
+  "sources": {
+    "primary_state_source": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/state/PROJECT_CURRENT_STATE__v1.md",
+    "evidence_index_source": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/evidence_index.json",
+    "evidence_verification": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/evidence_interface_verification.json",
+    "evidence_proof": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/e2e_evidence_interface_proof.json",
+    "evidence_execution_outputs": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs.json"
+  }
+}

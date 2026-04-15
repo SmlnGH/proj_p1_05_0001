@@ -1,0 +1,22 @@
+{
+  "module_id": "P5-M-01",
+  "project_id": "proj_p1_05_0001",
+  "generated_at": "2026-03-29T04:26:00Z",
+  "proof_chain": {
+    "upstream": {
+      "p4_module": "P4-M-01",
+      "p4_e2e_proof_path": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/e2e_evidence_interface_proof.json"
+    },
+    "verification_passed": true,
+    "evidence_paths": [
+      "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/evidence_interface_verification.json",
+      "/home/openclaw/.openclaw/workspace/ai-plus/governance/phase3/p3m02/P3-M-02_proof_of_registry_result.json"
+    ],
+    "key_observable_fields": [
+      "verification_passed",
+      "artifact_id",
+      "pointer.target_canonical_path",
+      "artifact_index.canonical_path"
+    ]
+  }
+}

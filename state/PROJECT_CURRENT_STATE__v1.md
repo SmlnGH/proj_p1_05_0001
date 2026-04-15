@@ -19,4 +19,5 @@ note: Minimal restore for recovery-chain validation when PROJECT_CURRENT_STATE__
   - 尚未部署到 Cloudflare Pages。
   - 尚未获得 public_url。
 - 当前阻塞点：
+  - acceptance.json overall_result = partial（尚未达到 complete）；因此项目仍保持 BLOCKED
   - 无法验证线上访问（缺少部署与 public_url）。

@@ -12,8 +12,8 @@
     "e2e_proof_verification_passed": true,
     "p5e2e_execution_outputs_verification_passed": true
   },
-  "verdict_reason": "基于现有证据链汇总：e2e proof chain 与 p5e2e execution outputs proof chain 均显示 verification_passed=true，可支持部分收口；但缺少将其裁决为 project-level complete 的权威裁决信号，因此 overall_result 取 partial（避免伪造 complete）。",
-  "verified_at": "2026-04-15T08:48:31Z",
+  "verdict_reason": "missing: deployment_public_url_available, deployment_status_active, git_repo_and_branch_traceable, evidence_chain_verification_proof_passed",
+  "verified_at": "2026-04-15T09:20:52Z",
   "authoritative_evidence_paths": [
     "reports/evidence_interface_verification.json",
     "reports/e2e_evidence_interface_proof.json",
@@ -23,5 +23,6 @@
     "reports/p5e2e_evidence_execution_outputs_summary.md",
     "evidence_index.json",
     "artifacts/index/artifact_index.json"
-  ]
+  ],
+  "complete_criteria_rule": "reports/project_level_complete_criteria_verdict_rule.json"
 }

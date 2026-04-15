@@ -21,3 +21,5 @@ note: Minimal restore for recovery-chain validation when PROJECT_CURRENT_STATE__
 - 当前阻塞点：
   - acceptance.json overall_result = partial（尚未达到 complete）；因此项目仍保持 BLOCKED
   - 无法验证线上访问（缺少部署与 public_url）。
+
+- complete criteria verdict rule 结果：仍为 partial（未满足 complete 必要条件，见 reports/project_level_complete_criteria_verdict_rule.json）。

@@ -1,0 +1,108 @@
+{
+  "artifact_kind": "project_level_complete_criteria_verdict_rule",
+  "rule_scope": "project_level",
+  "authoritative_source": true,
+  "overall_result_enum": {
+    "complete": "complete",
+    "partial": "partial",
+    "failed": "failed",
+    "unknown": "unknown"
+  },
+  "required_conditions": [
+    {
+      "condition_name": "deployment_public_url_available",
+      "required_for": "complete",
+      "evidence": {
+        "field": "current_state.json.public_url",
+        "expected": "https://",
+        "source_paths": [
+          "current_state.json"
+        ]
+      },
+      "decision_logic": "public_url 不为空且为 http(s) URL"
+    },
+    {
+      "condition_name": "deployment_status_active",
+      "required_for": "complete",
+      "evidence": {
+        "field": "current_state.json.deployment_status",
+        "expected": "active",
+        "source_paths": [
+          "current_state.json"
+        ]
+      },
+      "decision_logic": "deployment_status == active"
+    },
+    {
+      "condition_name": "git_repo_and_branch_traceable",
+      "required_for": "complete",
+      "evidence": {
+        "fields": [
+          "current_state.json.repo_url",
+          "current_state.json.branch"
+        ],
+        "expected": [
+          "https://github.com/",
+          "main"
+        ],
+        "source_paths": [
+          "current_state.json"
+        ]
+      },
+      "decision_logic": "repo_url 为 GitHub URL 且 branch == main"
+    },
+    {
+      "condition_name": "evidence_chain_verification_proof_passed",
+      "required_for": "complete",
+      "evidence": {
+        "fields": [
+          "reports/e2e_evidence_interface_proof.json.proof_chain.verification_passed",
+          "reports/p5e2e_evidence_execution_outputs.json.proof_chain.verification_passed"
+        ],
+        "expected": [
+          true,
+          true
+        ],
+        "source_paths": [
+          "reports/e2e_evidence_interface_proof.json",
+          "reports/p5e2e_evidence_execution_outputs.json"
+        ]
+      },
+      "decision_logic": "e2e proof_chain.verification_passed == true 且 p5e2e execution_outputs proof_chain.verification_passed == true"
+    },
+    {
+      "condition_name": "evidence_index_and_artifact_index_can_be_conciliated",
+      "required_for": "complete",
+      "evidence": {
+        "fields": [
+          "reports/e2e_evidence_interface_proof.json.proof_chain.pointer.pointer_target_matches_artifact_index_path",
+          "reports/e2e_evidence_interface_proof.json.proof_chain.artifact_index.artifact_index_has_artifact"
+        ],
+        "expected": [
+          true,
+          true
+        ],
+        "source_paths": [
+          "reports/e2e_evidence_interface_proof.json"
+        ]
+      },
+      "decision_logic": "proof_chain 指针/工件索引对账字段为 true"
+    },
+    {
+      "condition_name": "acceptance_no_authoritative_source_gap",
+      "required_for": "complete",
+      "evidence": {
+        "field": "acceptance.json.overall_result",
+        "expected": "complete (after verdict update)",
+        "source_paths": [
+          "acceptance.json"
+        ]
+      },
+      "decision_logic": "依据本规则将 overall_result 从 partial 推到 complete"
+    }
+  ],
+  "decision_method": "all required_conditions must be satisfied (AND) for complete; otherwise partial",
+  "required_conditions_version": "v1",
+  "authoritative_policy_reference": "/home/openclaw/.openclaw/workspace/ai-plus/governance/ACCEPTANCE_POLICY__SSOT.md",
+  "verified_at": "2026-04-15T09:20:52Z"
+}

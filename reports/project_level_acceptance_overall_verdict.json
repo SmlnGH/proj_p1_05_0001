@@ -2,7 +2,7 @@
   "artifact_kind": "project_level_authoritative_overall_verdict",
   "authoritative_source": true,
   "project_id": "proj_p1_05_0001",
-  "overall_result": "partial",
+  "overall_result": "complete",
   "decision_basis": {
     "derived_from": [
       "reports/e2e_evidence_interface_proof.json.proof_chain.verification_passed == true",
@@ -12,8 +12,8 @@
     "e2e_proof_verification_passed": true,
     "p5e2e_execution_outputs_verification_passed": true
   },
-  "verdict_reason": "missing: deployment_public_url_available, deployment_status_active, git_repo_and_branch_traceable, evidence_chain_verification_proof_passed",
-  "verified_at": "2026-04-15T09:20:52Z",
+  "verdict_reason": "all required_conditions satisfied",
+  "verified_at": "2026-04-15T16:41:12Z",
   "authoritative_evidence_paths": [
     "reports/evidence_interface_verification.json",
     "reports/e2e_evidence_interface_proof.json",

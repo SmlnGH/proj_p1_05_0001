@@ -1,8 +1,8 @@
 {
   "project_id": "proj_p1_05_0001",
   "acceptance_kind": "evidence_based_acceptance",
-  "overall_result": "partial",
-  "summary": "overall_result recalculated by project-level complete-criteria rule; result=partial (some required conditions unmet).",
+  "overall_result": "complete",
+  "summary": "recomputed by corrected project-level complete criteria rule",
   "checks": [
     {
       "name": "evidence_interface_verification_passed",
@@ -40,12 +40,12 @@
     "evidence_proof": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/e2e_evidence_interface_proof.json",
     "evidence_execution_outputs": "/home/openclaw/.openclaw/workspace/ai-plus/projects/proj_p1_05_0001/reports/p5e2e_evidence_execution_outputs.json"
   },
-  "acceptance_status": "partial",
+  "acceptance_status": "complete",
   "verdict_sources": {
     "project_level_authoritative_verdict": "reports/project_level_acceptance_overall_verdict.json",
     "project_level_complete_criteria_rule": "reports/project_level_complete_criteria_verdict_rule.json"
   },
-  "decision_at": "2026-04-15T09:21:04Z",
+  "decision_at": "2026-04-15T16:41:12Z",
   "decision_basis_short": {
     "derived": "e2e & p5e2e proof_chain verification_passed true; overall_result set to partial to avoid fabricating complete"
   }

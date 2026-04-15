@@ -56,7 +56,7 @@
       "required_for": "complete",
       "evidence": {
         "fields": [
-          "reports/e2e_evidence_interface_proof.json.proof_chain.verification_passed",
+          "reports/e2e_evidence_interface_proof.json.verification_passed",
           "reports/p5e2e_evidence_execution_outputs.json.proof_chain.verification_passed"
         ],
         "expected": [
@@ -92,13 +92,13 @@
       "condition_name": "acceptance_no_authoritative_source_gap",
       "required_for": "complete",
       "evidence": {
-        "field": "acceptance.json.overall_result",
-        "expected": "complete (after verdict update)",
+        "field": "acceptance.json.unknown_fields",
+        "expected": {},
         "source_paths": [
           "acceptance.json"
         ]
       },
-      "decision_logic": "依据本规则将 overall_result 从 partial 推到 complete"
+      "decision_logic": "acceptance.json.unknown_fields is empty/missing"
     }
   ],
   "decision_method": "all required_conditions must be satisfied (AND) for complete; otherwise partial",

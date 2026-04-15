@@ -3,54 +3,292 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>proj_p1_05_0001 — State / Evidence / Acceptance Mirror</title>
+    <title>proj_p1_05_0001 — Evidence & Governance Mirror</title>
+    <meta name="description" content="展示层：state / evidence / acceptance 镜像摘要（静态可读）。" />
+    <meta property="og:title" content="proj_p1_05_0001 — Evidence & Governance Mirror" />
+    <meta property="og:description" content="展示层：state / evidence / acceptance 镜像摘要（静态可读）。" />
+    <meta property="og:type" content="website" />
+
     <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif; margin: 24px; line-height: 1.5; color: #111; }
-      code, pre { background: #f6f8fa; padding: 2px 6px; border-radius: 6px; }
-      .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; margin: 16px 0; }
-      a { color: #0b5fff; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      ul { margin: 8px 0 0 20px; }
+      :root{
+        --bg:#0b1220;
+        --card: rgba(255,255,255,.06);
+        --card2: rgba(255,255,255,.08);
+        --text:#e6edf3;
+        --muted:#a9b4c1;
+        --border: rgba(255,255,255,.12);
+        --brand:#6ea8fe;
+        --brand2:#22c55e;
+        --warn:#f59e0b;
+        --danger:#ef4444;
+        --shadow: 0 18px 60px rgba(0,0,0,.35);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: light){
+        :root{
+          --bg:#f6f7fb;
+          --card: rgba(0,0,0,.045);
+          --card2: rgba(0,0,0,.065);
+          --text:#0b1220;
+          --muted:#53606f;
+          --border: rgba(0,0,0,.12);
+          --shadow: 0 18px 60px rgba(0,0,0,.10);
+        }
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        background: radial-gradient(1200px 600px at 30% -10%, rgba(110,168,254,.35), transparent 60%), var(--bg);
+        color:var(--text);
+        line-height:1.55;
+      }
+      header{
+        padding: 28px 16px 0;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .topbar{
+        display:flex;
+        align-items:center;
+        gap:12px;
+        justify-content:space-between;
+        flex-wrap:wrap;
+      }
+      .brand{
+        display:flex;
+        align-items:center;
+        gap:12px;
+      }
+      .logo{
+        width:42px;
+        height:42px;
+        border-radius:14px;
+        background: linear-gradient(135deg, rgba(110,168,254,.9), rgba(34,197,94,.7));
+        box-shadow: 0 10px 30px rgba(110,168,254,.25);
+        border: 1px solid rgba(255,255,255,.18);
+      }
+      h1{font-size: 18px; margin:0}
+      .subtitle{color:var(--muted); font-size:13px; margin-top:2px}
+
+      .pill{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding:10px 12px;
+        border-radius:999px;
+        border:1px solid var(--border);
+        background: rgba(255,255,255,.03);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        font-size:13px;
+        color:var(--muted);
+      }
+      .dot{width:10px;height:10px;border-radius:999px;background:var(--brand)}
+      main{
+        max-width: 1100px;
+        margin: 18px auto 56px;
+        padding: 0 16px;
+      }
+
+      .grid{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      @media (min-width: 900px){
+        .grid{grid-template-columns: 1.35fr .65fr;}
+      }
+
+      .card{
+        border: 1px solid var(--border);
+        background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.035));
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 16px;
+      }
+      .card h2{font-size: 14px; margin: 0 0 10px; color: var(--muted); font-weight: 700; letter-spacing:.02em;}
+      .lead{font-size: 14px; color: var(--muted); margin:0 0 12px}
+
+      .kvs{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      @media (min-width: 520px){
+        .kvs{grid-template-columns: 1fr 1fr;}
+      }
+      .kv{
+        padding: 12px;
+        border:1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255,255,255,.03);
+      }
+      .kv .key{font-size:12px;color:var(--muted)}
+      .kv .val{margin-top:6px;font-weight:800; font-size:14px; word-break: break-word;}
+
+      a.link{color: var(--brand); text-decoration: none; border-bottom: 1px dashed rgba(110,168,254,.35)}
+      a.link:hover{border-bottom-style: solid;}
+
+      .section-title{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        flex-wrap:wrap;
+      }
+      details{
+        border:1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255,255,255,.025);
+        padding: 12px 12px;
+      }
+      summary{
+        cursor:pointer;
+        color: var(--text);
+        font-weight:700;
+      }
+      details p{color:var(--muted); margin: 8px 0 0}
+      .list{margin:10px 0 0; padding-left: 18px; color: var(--muted)}
+
+      footer{
+        max-width:1100px;
+        margin: 0 auto;
+        padding: 0 16px 28px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .badge{
+        display:inline-flex;
+        align-items:center;
+        gap:8px;
+        padding: 8px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255,255,255,.03);
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .badge.ok{color: var(--brand2)}
+      .badge.block{color: var(--warn)}
     </style>
   </head>
   <body>
-    <h1>proj_p1_05_0001</h1>
-    <p>
-      这是一个用于展示 <strong>state / evidence / acceptance</strong> 镜像摘要的最小静态入口（无构建系统）。
-      直接在浏览器打开即可阅读。
-    </p>
+    <header>
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>proj_p1_05_0001</h1>
+            <div class="subtitle">Evidence & Governance Mirror（静态展示）</div>
+          </div>
+        </div>
+        <div class="pill" title="本页面为静态展示层，无构建流程">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Static · Audit-friendly</span>
+        </div>
+      </div>
+    </header>
 
-    <div class="card">
-      <h2>当前项目状态</h2>
-      <p><strong>execution_status</strong> = <code>BLOCKED</code></p>
-      <p><strong>已完成</strong>：独立 git 仓库 + GitHub remote + 首次 push</p>
-      <p><strong>未完成</strong>：Cloudflare Pages 部署 + public_url</p>
-    </div>
+    <main>
+      <div class="grid">
+        <section class="card">
+          <h2>概览</h2>
+          <p class="lead">
+            本站点用于展示当前项目的 state / evidence / acceptance 镜像摘要。
+            内容来自仓库中的治理与证据产物（无前端构建、可直接阅读）。
+          </p>
 
-    <div class="card">
-      <h2>镜像文件与摘要（点击跳转）</h2>
-      <ul>
-        <li><a href="../current_state.md">current_state.md</a></li>
-        <li><a href="../current_state.json">current_state.json</a></li>
-        <li><a href="../acceptance.json">acceptance.json</a></li>
-        <li><a href="../evidence_index.json">evidence_index.json</a></li>
-        <li><a href="../state/PROJECT_CURRENT_STATE__v1.md">state/PROJECT_CURRENT_STATE__v1.md</a></li>
-        <li><a href="../reports/evidence_interface_verification_summary.md">reports/evidence_interface_verification_summary.md</a></li>
-        <li><a href="../reports/e2e_evidence_interface_proof_summary.md">reports/e2e_evidence_interface_proof_summary.md</a></li>
-        <li><a href="../reports/p5e2e_evidence_execution_outputs_summary.md">reports/p5e2e_evidence_execution_outputs_summary.md</a></li>
-      </ul>
-    </div>
+          <div class="kvs" aria-label="project facts">
+            <div class="kv">
+              <div class="key">execution_status</div>
+              <div class="val"><a class="link" href="../current_state.json">(see current_state.json)</a></div>
+            </div>
+            <div class="kv">
+              <div class="key">acceptance.overall_result</div>
+              <div class="val"><a class="link" href="../acceptance.json">(see acceptance.json)</a></div>
+            </div>
+            <div class="kv">
+              <div class="key">public_url</div>
+              <div class="val"><a class="link" href="https://projp1050001.qsgw2007.workers.dev/">https://projp1050001.qsgw2007.workers.dev/</a></div>
+            </div>
+            <div class="kv">
+              <div class="key">GitHub repo</div>
+              <div class="val"><a class="link" href="https://github.com/SmlnGH/proj_p1_05_0001">SmlnGH/proj_p1_05_0001</a></div>
+            </div>
+          </div>
 
-    <div class="card">
-      <h2>可选：直接查看证据产物</h2>
-      <p>
-        如需进一步审计，可在本仓库根目录继续浏览 <code>reports/</code> 与 <code>artifacts/</code>。
-      </p>
-    </div>
+          <div style="height:14px"></div>
+          <div class="section-title">
+            <h2 style="margin:0">核心镜像入口</h2>
+            <span class="badge ok">Ready to audit</span>
+          </div>
 
-    <hr />
-    <p style="font-size: 12px; color: #555;">
-      注：本页面为静态展示层，不包含任何构建/打包步骤。
-    </p>
+          <details style="margin-top:12px">
+            <summary>State / Evidence / Acceptance 汇总</summary>
+            <p>直接跳转到仓库中的关键产物文件（支持 GitHub/Pages 直读）。</p>
+            <ul class="list">
+              <li><a class="link" href="../current_state.md">current_state.md</a></li>
+              <li><a class="link" href="../current_state.json">current_state.json</a></li>
+              <li><a class="link" href="../acceptance.json">acceptance.json</a></li>
+              <li><a class="link" href="../evidence_index.json">evidence_index.json</a></li>
+              <li><a class="link" href="../state/PROJECT_CURRENT_STATE__v1.md">state/PROJECT_CURRENT_STATE__v1.md</a></li>
+              <li><a class="link" href="../reports/evidence_interface_verification_summary.md">reports/evidence_interface_verification_summary.md</a></li>
+              <li><a class="link" href="../reports/e2e_evidence_interface_proof_summary.md">reports/e2e_evidence_interface_proof_summary.md</a></li>
+              <li><a class="link" href="../reports/p5e2e_evidence_execution_outputs_summary.md">reports/p5e2e_evidence_execution_outputs_summary.md</a></li>
+            </ul>
+          </details>
+
+          <div style="height:12px"></div>
+
+          <details>
+            <summary>如何解读（给审计员）</summary>
+            <p>
+              建议阅读顺序：
+              <code>current_state.json → acceptance.json → reports/*_summary.md → evidence_index.json</code>。
+              若需要底层对账，再查看 <code>artifacts/index/*</code> 与各 proof/verification JSON。
+            </p>
+          </details>
+
+          <div style="height:12px"></div>
+
+          <details>
+            <summary>免责声明</summary>
+            <p>
+              本站点为静态展示层，不包含任何构建/运行时逻辑。
+              证据链以仓库中的原始产物文件为准。
+            </p>
+          </details>
+        </section>
+
+        <aside class="card">
+          <h2>快速查看</h2>
+          <div class="kvs">
+            <div class="kv">
+              <div class="key">Evidence index</div>
+              <div class="val"><a class="link" href="../evidence_index.json">Open</a></div>
+            </div>
+            <div class="kv">
+              <div class="key">Artifacts index</div>
+              <div class="val"><a class="link" href="../artifacts/index/artifact_index.json">Open</a></div>
+            </div>
+            <div class="kv">
+              <div class="key">Project verdict</div>
+              <div class="val"><a class="link" href="../reports/project_level_acceptance_overall_verdict.json">Open</a></div>
+            </div>
+            <div class="kv">
+              <div class="key">Deployment facts</div>
+              <div class="val"><a class="link" href="../current_state.json">Open</a></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        © proj_p1_05_0001 · Static audit mirror · Built for readability (no build pipeline).
+      </div>
+    </footer>
   </body>
 </html>

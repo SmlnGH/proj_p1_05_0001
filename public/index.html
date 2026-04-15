@@ -173,7 +173,7 @@
       .badge.block{color: var(--warn)}
     </style>
   </head>
-  <body>
+  <body id="top">
     <header>
       <div class="topbar">
         <div class="brand">
@@ -188,11 +188,21 @@
           <span>Static · Audit-friendly</span>
         </div>
       </div>
-    </header>
+    
+    <nav style="max-width:1100px;margin:16px auto 0;padding:0 16px;">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <a class="link" href="#overview" style="font-weight:800">概览</a>
+        <a class="link" href="#mirror" style="font-weight:800">镜像入口</a>
+        <a class="link" href="#evidence" style="font-weight:800">证据摘要</a>
+        <a class="link" href="#deployment" style="font-weight:800">部署事实</a>
+        <a class="link" href="#howto" style="font-weight:800">如何解读</a>
+      </div>
+    </nav>
+        </header>
 
     <main>
       <div class="grid">
-        <section class="card">
+        <section class="card" id="overview">
           <h2>概览</h2>
           <p class="lead">
             本站点用于展示当前项目的 state / evidence / acceptance 镜像摘要。
@@ -202,19 +212,19 @@
           <div class="kvs" aria-label="project facts">
             <div class="kv">
               <div class="key">execution_status</div>
-              <div class="val"><a class="link" href="../current_state.json">(see current_state.json)</a></div>
+              <div class="val"><span id="dyn_execution_status">(see current_state.json)</span></div>
             </div>
             <div class="kv">
               <div class="key">acceptance.overall_result</div>
-              <div class="val"><a class="link" href="../acceptance.json">(see acceptance.json)</a></div>
+              <div class="val"><span id="dyn_acceptance_overall">(see acceptance.json)</span></div>
             </div>
             <div class="kv">
               <div class="key">public_url</div>
-              <div class="val"><a class="link" href="https://projp1050001.qsgw2007.workers.dev/">https://projp1050001.qsgw2007.workers.dev/</a></div>
+              <div class="val"><span id="dyn_public_url">https://projp1050001.qsgw2007.workers.dev/</span></div>
             </div>
             <div class="kv">
               <div class="key">GitHub repo</div>
-              <div class="val"><a class="link" href="https://github.com/SmlnGH/proj_p1_05_0001">SmlnGH/proj_p1_05_0001</a></div>
+              <div class="val"><span id="dyn_repo_url">https://github.com/SmlnGH/proj_p1_05_0001</span></div>
             </div>
           </div>
 
@@ -224,7 +234,7 @@
             <span class="badge ok">Ready to audit</span>
           </div>
 
-          <details style="margin-top:12px">
+          <details style="margin-top:12px" id="mirror">
             <summary>State / Evidence / Acceptance 汇总</summary>
             <p>直接跳转到仓库中的关键产物文件（支持 GitHub/Pages 直读）。</p>
             <ul class="list">
@@ -239,8 +249,22 @@
             </ul>
           </details>
 
+          
           <div style="height:12px"></div>
 
+          <details id="evidence">
+            <summary>证据摘要（来自 *summary.md / verification/proof outputs）</summary>
+            <p>以下卡片用于快速审计。页面仅做展示，不改变证据。</p>
+            <div class="kvs" style="margin-top:10px;">
+              <div class="kv"><div class="key">evidence_interface_verification_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/evidence_interface_verification_summary.md">reports/…</a></div></div>
+              <div class="kv"><div class="key">e2e_evidence_interface_proof_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/e2e_evidence_interface_proof_summary.md">reports/…</a></div></div>
+              <div class="kv"><div class="key">p5e2e_execution_outputs_summary</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/p5e2e_evidence_execution_outputs_summary.md">reports/…</a></div></div>
+              <div class="kv"><div class="key">project verdict</div><div class="val">查看</div><div style="margin-top:6px;"><a class="link" href="../reports/project_level_acceptance_overall_verdict.json">reports/…</a></div></div>
+            </div>
+          </details>
+
+          <div style="height:12px"></div>
+    
           <details>
             <summary>如何解读（给审计员）</summary>
             <p>
@@ -261,7 +285,7 @@
           </details>
         </section>
 
-        <aside class="card">
+        <aside class="card" id="deployment">
           <h2>快速查看</h2>
           <div class="kvs">
             <div class="kv">
@@ -277,8 +301,12 @@
               <div class="val"><a class="link" href="../reports/project_level_acceptance_overall_verdict.json">Open</a></div>
             </div>
             <div class="kv">
+              <div class="key">Branch</div>
+              <div class="val"><span id="dyn_branch">main</span></div>
+            </div>
+            <div class="kv">
               <div class="key">Deployment facts</div>
-              <div class="val"><a class="link" href="../current_state.json">Open</a></div>
+              <div class="val"><span id="dyn_deployment_status">active</span></div>
             </div>
           </div>
         </aside>
@@ -290,5 +318,31 @@
         © proj_p1_05_0001 · Static audit mirror · Built for readability (no build pipeline).
       </div>
     </footer>
-  </body>
+    <script>
+      async function loadJSON(path){
+        const r = await fetch(path, {cache:'no-store'});
+        if(!r.ok) throw new Error('Failed to load '+path);
+        return r.json();
+      }
+      function setText(id, val){
+        const el=document.getElementById(id);
+        if(el) el.textContent = (val===undefined||val===null)?'—':String(val);
+      }
+      (async()=>{
+        try{
+          const cs = await loadJSON('../current_state.json');
+          const acc = await loadJSON('../acceptance.json');
+          setText('dyn_execution_status', cs.execution_status);
+          setText('dyn_deployment_status', cs.deployment_status);
+          setText('dyn_public_url', cs.public_url);
+          setText('dyn_repo_url', cs.repo_url);
+          setText('dyn_branch', cs.branch);
+          setText('dyn_acceptance_overall', acc.overall_result);
+        }catch(e){
+          // keep static fallback
+          console.warn(e);
+        }
+      })();
+    </script>
+      </body>
 </html>
